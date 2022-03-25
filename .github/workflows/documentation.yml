@@ -1,0 +1,23 @@
+# workflow to build and publish documentation on push
+
+name: Documentation Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Merge main -> documentation
+      uses: devmasx/merge-branch@master
+      with:
+        type: now
+        target_branch: documentation
+        github_token: ${{ github.token }}
