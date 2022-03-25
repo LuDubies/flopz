@@ -30,3 +30,11 @@ jobs:
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
+
+    - name: Commit doc changes
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add docs
+        git commit -m "adding updated documentation" || true
+        git push
