@@ -27,15 +27,15 @@ jobs:
       with:
         ref: documentation
 
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "docs/"
-
     - name: Regenerate Documentation
       run: |
         cd docs/
         sphinx-apidoc -f -o -source/ ../flopz -d 10
         cd ..
+
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "docs/"
 
     - name: Commit doc changes
       run: |
