@@ -21,3 +21,4 @@ jobs:
         type: now
         target_branch: documentation
         github_token: ${{ github.token }}
+        message: Automatic merge from push to main
