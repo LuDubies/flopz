@@ -21,4 +21,12 @@ jobs:
         type: now
         target_branch: documentation
         github_token: ${{ github.token }}
-        message: Automatic merge from push to main
+        message: "Automatic merge from push to main"
+
+    - uses: actions/checkout@master
+      with:
+        ref: documentation
+
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "docs/"
