@@ -30,6 +30,7 @@ jobs:
     - name: Regenerate Documentation
       run: |
         cd docs/
+        pip install -U sphinx
         sphinx-apidoc -f -o -source/ ../flopz -d 10
         cd ..
 
