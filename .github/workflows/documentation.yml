@@ -31,6 +31,12 @@ jobs:
       with:
         docs-folder: "docs/"
 
+    - name: Regenerate Documentation
+      run: |
+        cd docs/
+        sphinx-apidoc -f -o -source/ ../flopz -d 10
+        cd ..
+
     - name: Commit doc changes
       run: |
         git config user.name github-actions
