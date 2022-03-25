@@ -8,7 +8,6 @@ Subpackages
    :maxdepth: 10
 
    flopz.arch.arm
-   flopz.arch.dummy
    flopz.arch.ia32
    flopz.arch.ppc
    flopz.arch.riscv
